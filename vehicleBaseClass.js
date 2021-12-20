@@ -10,13 +10,13 @@ class Vehicle {
         this.started = false;
         this.numberOfWheels = 0;
     }
-
+// I removed the "return" keyword on lines 16 & 19 in order to see the string logged in the console
     start() {
         if (this.fuel > 0) {
-            return this.started = true;
+            this.started = true;
             console.log("engine started...!!!");
         } else {
-            return this.started = false;
+            this.started = false;
             console.log("engine cannot start...");
         }
     }
@@ -30,7 +30,7 @@ class Vehicle {
                 this.stop();
             }
         } else {
-            alert("You need to start the engine first.");
+            console.log("You need to start the engine first.");  // Changed "alert" to "console.log" due to error
         }
     }
     decelerate() {
@@ -76,7 +76,7 @@ class Vehicle {
         if (this.numberOfWheels == 8 && 8 == wheels) {
             console.log(this.model + " " + this.make + " is a Truck");
         } else if (this.numberOfWheels == 4 && 4 == wheels) {
-            console.log(this.model + " " + this.make + " is a CAr");
+            console.log(this.model + " " + this.make + " is a Car");
         } else if (this.numberOfWheels == 2 && 2 == wheels) {
             console.log(this.model + " " + this.make + " is a Bike");
         } else {
@@ -86,6 +86,9 @@ class Vehicle {
 }
 
 //This exports things you want to use from this "module", more info in readme
-module.exports = {
+// export {
+//     Vehicle
+// }
+module.exports = { 
     Vehicle
 }
